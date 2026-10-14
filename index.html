@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erena | Land Arrangement</title>
+<style>
+:root{--green:#073f36;--green2:#0b594a;--gold:#d6a84f;--cream:#f7f4eb;--ink:#18342e;--muted:#68766f;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fbfaf6;line-height:1.6}
+header{background:rgba(5,48,41,.97);color:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(214,168,79,.55)}
+.nav{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:15px 22px;gap:20px}.brand{font-family:Georgia,serif;font-size:28px;font-weight:bold;letter-spacing:2px;color:#fff;text-decoration:none}.brand span{color:var(--gold)}nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav a{color:#eaf0ec;text-decoration:none;font-size:13px;font-weight:700}nav a:hover{color:var(--gold)}
+.hero{background:linear-gradient(105deg,rgba(3,49,41,.98),rgba(6,68,56,.88)),radial-gradient(ellipse at 80% 20%,#8e8b5c 0,transparent 35%);color:white;min-height:430px;display:flex;align-items:center;border-bottom:4px solid var(--gold)}
+.hero-inner{max-width:1160px;margin:auto;width:100%;padding:70px 24px}.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:bold}.hero h1{font-family:Georgia,serif;font-size:clamp(40px,6vw,68px);line-height:1.05;max-width:690px;margin:16px 0}.hero p{max-width:550px;color:#dce7df;font-size:16px}.btn{display:inline-block;border:0;border-radius:3px;padding:13px 20px;font-weight:bold;text-decoration:none;cursor:pointer;font-size:13px}.btn-gold{background:var(--gold);color:#143c32}.btn-outline{border:1px solid #c9d8d0;color:white;margin-left:8px;background:transparent}
+section{max-width:1160px;margin:auto;padding:62px 24px}.section-head{margin-bottom:26px}.section-head .eyebrow{color:#9a7427}.section-head h2{font-family:Georgia,serif;font-size:36px;margin:4px 0;color:var(--green)}.section-head p{margin:0;color:var(--muted)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service-card{background:#fff;border:1px solid #e5e3d9;padding:24px;border-radius:5px;min-height:190px;box-shadow:0 8px 25px #193d2b0a;display:flex;flex-direction:column}.service-card .num{font-family:Georgia,serif;color:var(--gold);font-size:27px}.service-card h3{margin:10px 0 4px;color:var(--green)}.service-card p{color:var(--muted);font-size:13px;flex:1}.service-card a{color:#956e1d;font-weight:bold;text-decoration:none;font-size:13px}
+.soft{max-width:none;background:var(--cream)}.soft>div{max-width:1160px;margin:auto}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price-card{background:#fff;border-radius:5px;overflow:hidden;border:1px solid #e7e1d2}.price-top{background:var(--green);color:white;padding:22px}.price-top small{color:var(--gold);letter-spacing:2px;font-size:10px}.price-top h3{font-family:Georgia,serif;font-size:25px;margin:6px 0}.price-body{padding:22px}.price-body p{font-size:13px;color:var(--muted)}.price-body strong{color:var(--green)}
+.form-wrap{background:white;border:1px solid #e3e2d9;box-shadow:0 10px 35px #18342e0b;border-radius:6px;padding:clamp(18px,4vw,36px)}.form-title{border-bottom:1px solid #e9e5da;padding-bottom:18px;margin-bottom:24px}.form-title h3{font-family:Georgia,serif;font-size:28px;color:var(--green);margin:0}.form-title p{color:var(--muted);font-size:13px;margin:5px 0 0}
+.form-section{padding:20px 0;border-bottom:1px solid #eeeae0}.form-section:last-of-type{border-bottom:0}.form-section h4{color:var(--green);font-size:15px;margin:0 0 16px;display:flex;align-items:center;gap:10px}.form-section h4 span{background:#f6edda;color:#8d6921;border-radius:50%;width:28px;height:28px;display:inline-grid;place-items:center}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:12px;font-weight:bold;color:#475d53}input,select,textarea{width:100%;padding:12px;border:1px solid #d9ded7;border-radius:3px;background:#fff;color:#19372f;font:inherit;font-size:13px;outline:none}input:focus,select:focus,textarea:focus{border-color:#a98334;box-shadow:0 0 0 2px #d6a84f20}.hint{font-size:11px;color:#77847d}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice{display:flex;gap:8px;align-items:center;padding:12px;border:1px solid #e1e4db;border-radius:3px;font-size:13px}.choice input{width:auto;accent-color:var(--green)}.itinerary{border:1px solid #e3e5dc;border-radius:4px;padding:17px;margin:12px 0;background:#fcfcf9}.itinerary-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.itinerary-head b{color:var(--green);font-size:14px}.remove{border:0;background:#f8e9e4;color:#a2432c;padding:6px 9px;cursor:pointer;border-radius:3px}.add-btn{background:#eff4ef;border:1px dashed #8ca397;color:var(--green);padding:11px 15px;border-radius:3px;cursor:pointer;font-weight:bold}.form-actions{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-top:25px}.submit{background:var(--green);color:white;padding:15px 22px}.submit:hover{background:var(--green2)}.small-note{font-size:11px;color:var(--muted);max-width:470px}
+footer{background:#052f28;color:#dbe5df;padding:30px 24px;text-align:center;border-top:3px solid var(--gold);font-size:12px}footer strong{font-family:Georgia,serif;font-size:22px;letter-spacing:2px;color:white}
+@media(max-width:850px){.service-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}nav{gap:12px}.hero-inner{padding:55px 22px}}
+@media(max-width:560px){.fields{grid-template-columns:1fr}.choice-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.hero{min-height:390px}.hero h1{font-size:43px}.section-head h2{font-size:30px}.btn-outline{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="#home">ERENA<span>.</span></a><nav><a href="#layanan">LAYANAN</a><a href="#hotel">PRICE LIST HOTEL</a><a href="#catering">CATERING</a><a href="#la-group">LA GROUP</a><a href="#la-private">LA PRIVATE</a></nav></div></header>
+<main id="home">
+<div class="hero"><div class="hero-inner"><div class="eyebrow">ERENA • LAND ARRANGEMENT</div><h1>Perjalanan yang tertata, layanan yang personal.</h1><p>Solusi kebutuhan hotel, catering, transportasi, dan layanan perjalanan untuk rombongan Anda. Rencanakan kebutuhan perjalanan dalam satu tempat.</p><a class="btn btn-gold" href="#la-group">Mulai Pengajuan LA Group ↗</a><a class="btn btn-outline" href="#layanan">Jelajahi layanan</a></div></div>
+<section id="layanan"><div class="section-head"><div class="eyebrow">Layanan Erena</div><h2>Apa yang Anda butuhkan?</h2><p>Pilih layanan untuk melihat informasi atau mengirimkan kebutuhan perjalanan.</p></div><div class="service-grid">
+<article class="service-card"><div class="num">01</div><h3>Price List Hotel</h3><p>Lihat kebutuhan akomodasi Makkah dan Madinah. Detail harga dapat dikonfirmasi sesuai tanggal dan ketersediaan.</p><a href="#hotel">Lihat informasi →</a></article>
+<article class="service-card"><div class="num">02</div><h3>Catering</h3><p>Ajukan kebutuhan meal box, snack, dan konsumsi rombongan selama perjalanan.</p><a href="#catering">Lihat layanan →</a></article>
+<article class="service-card"><div class="num">03</div><h3>LA Group</h3><p>Form pengajuan lengkap untuk rombongan minimal 20 pax, termasuk itinerary dan layanan tambahan.</p><a href="#la-group">Isi formulir →</a></article>
+<article class="service-card"><div class="num">04</div><h3>LA Private</h3><p>Perjalanan yang lebih fleksibel dengan kebutuhan layanan yang dapat disesuaikan.</p><a href="#la-private">Lihat informasi →</a></article>
+</div></section>
+<div class="soft"><section id="hotel"><div class="section-head"><div class="eyebrow">Akomodasi</div><h2>Price List Hotel</h2><p>Contoh tampilan awal. Nama hotel dan harga bisa dimasukkan setelah data resmi tersedia.</p></div><div class="price-grid">
+<article class="price-card"><div class="price-top"><small>MAKKAH</small><h3>Hotel Makkah</h3></div><div class="price-body"><p>Informasi pilihan hotel di Makkah.</p><p><strong>Tipe kamar:</strong> Double / Triple / Quad</p><p><strong>Harga:</strong> Menyesuaikan tanggal dan ketersediaan</p><a class="btn btn-gold" href="#la-group">Tanyakan hotel</a></div></article>
+<article class="price-card"><div class="price-top"><small>MADINAH</small><h3>Hotel Madinah</h3></div><div class="price-body"><p>Informasi pilihan hotel di Madinah.</p><p><strong>Tipe kamar:</strong> Single / Double / Triple</p><p><strong>Harga:</strong> Menyesuaikan tanggal dan ketersediaan</p><a class="btn btn-gold" href="#la-group">Tanyakan hotel</a></div></article>
+<article class="price-card" id="catering"><div class="price-top"><small>KONSUMSI</small><h3>Catering</h3></div><div class="price-body"><p>Kebutuhan konsumsi untuk jamaah dan rombongan.</p><p><strong>Pilihan:</strong> Meal box, snack, snack perpindahan kota</p><p><strong>Harga:</strong> Berdasarkan jumlah pax dan pilihan menu</p><a class="btn btn-gold" href="#la-group">Ajukan kebutuhan</a></div></article>
+</div></section></div>
+<section id="la-group"><div class="section-head"><div class="eyebrow">Form pengajuan</div><h2>LA Group</h2><p>Lengkapi data di bawah ini. Setelah dikirim, ringkasan kebutuhan akan disiapkan ke WhatsApp.</p></div>
+<form class="form-wrap" id="groupForm">
+<div class="form-title"><h3>ERENA — LA GROUP</h3><p>Group Land Arrangement Request • Minimal 20 pax</p></div>
+<div class="form-section"><h4><span>1</span> Informasi customer</h4><div class="fields">
+<div class="field"><label for="cust">Nama customer / perusahaan / travel *</label><input id="cust" name="cust" required placeholder="Nama atau nama perusahaan"></div>
+<div class="field"><label for="phone">Nomor telepon *</label><input id="phone" name="phone" required type="tel" placeholder="08xxxxxxxxxx"></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="nama@email.com"></div>
+<div class="field"><label for="pax">Jumlah pax (minimal 20) *</label><input id="pax" name="pax" type="number" min="20" value="20" required></div>
+<div class="field"><label for="depart">Tanggal keberangkatan *</label><input id="depart" name="depart" type="date" required></div>
+<div class="field"><label for="return">Tanggal kepulangan *</label><input id="return" name="return" type="date" required></div>
+<div class="field full"><label for="flight">Flight number / tiket</label><input id="flight" name="flight" placeholder="Maskapai, nomor penerbangan, atau detail tiket"></div>
+<div class="field"><label for="visa">Visa</label><select id="visa" name="visa"><option value="Belum ditentukan">Pilih kebutuhan visa</option><option>Termasuk kebutuhan visa</option><option>Tidak membutuhkan</option><option>Belum ditentukan</option></select></div>
+<div class="field"><label for="raudah">Raudah</label><select id="raudah" name="raudah"><option>Belum ditentukan</option><option>Ya, membutuhkan</option><option>Tidak membutuhkan</option></select></div>
+</div></div>
+<div class="form-section"><h4><span>2</span> Transportasi</h4><div class="choice-grid">
+<label class="choice"><input type="checkbox" name="transport" value="Bis Reguler"> Bis Reguler</label><label class="choice"><input type="checkbox" name="transport" value="Bis Premium"> Bis Premium</label><label class="choice"><input type="checkbox" name="transport" value="Bis VVIP"> Bis VVIP</label>
+</div></div>
+<div class="form-section"><h4><span>3</span> Itinerary</h4><div id="itineraryList">
+<div class="itinerary"><div class="itinerary-head"><b>Tujuan 1</b></div><div class="fields">
+<div class="field"><label>Kota</label><select name="city[]"><option>Makkah</option><option>Madinah</option></select></div>
+<div class="field"><label>Berapa hari</label><input name="days[]" type="number" min="1" placeholder="Contoh: 5"></div>
+<div class="field full"><label>Nama hotel</label><input name="hotel[]" placeholder="Nama hotel jika sudah ada"></div>
+<div class="field"><label>Total room hotel</label><input name="rooms[]" type="number" min="0" placeholder="Jumlah kamar"></div>
+<div class="field"><label>Tanggal menginap</label><input name="stay[]" placeholder="Contoh: 10–15 Januari 2027"></div>
+</div></div></div><button type="button" class="add-btn" id="addItinerary">＋ Tambah tujuan / itinerary</button></div>
+<div class="form-section"><h4><span>4</span> Add-on & layanan service</h4><p class="hint">Centang layanan yang dibutuhkan. Pilihan dapat dibicarakan kembali dengan tim Erena.</p><div class="choice-grid">
+<label class="choice"><input type="checkbox" name="addon" value="Handling Airport Kedatangan"> Handling Airport Kedatangan</label>
+<label class="choice"><input type="checkbox" name="addon" value="Handling Airport Kepulangan"> Handling Airport Kepulangan</label>
+<label class="choice"><input type="checkbox" name="addon" value="Handling Check-in / Check-out Hotel"> Handling Check-in / Check-out Hotel</label>
+<label class="choice"><input type="checkbox" name="addon" value="Snack City Tour Makkah dan Madinah"> Snack City Tour Makkah & Madinah</label>
+<label class="choice"><input type="checkbox" name="addon" value="Snack Perpindahan Antar Kota"> Snack Perpindahan Antar Kota</label>
+<label class="choice"><input type="checkbox" name="addon" value="Meal Box Kedatangan"> Meal Box Kedatangan</label>
+<label class="choice"><input type="checkbox" name="addon" value="Meal Box Kepulangan"> Meal Box Kepulangan</label>
+<label class="choice"><input type="checkbox" name="addon" value="Transportasi tambahan"> Transportasi tambahan</label>
+<label class="choice"><input type="checkbox" name="addon" value="Videographer Profesional"> Videographer Profesional</label>
+<label class="choice"><input type="checkbox" name="addon" value="Albaik"> Albaik</label>
+<label class="choice"><input type="checkbox" name="addon" value="Standing banner"> Standing banner</label>
+<label class="choice"><input type="checkbox" name="addon" value="Snack + Zamzam tiap kamar"> Snack + Zamzam tiap kamar</label>
+<label class="choice"><input type="checkbox" name="addon" value="Greetings Card"> Greetings Card</label>
+<label class="choice"><input type="checkbox" name="addon" value="Trip tambahan (Khandamah, Al Ula, dll.)"> Trip tambahan (Khandamah, Al Ula, dll.)</label>
+<label class="choice"><input type="checkbox" name="addon" value="Transmiter"> Transmiter</label>
+</div><div class="field" style="margin-top:16px"><label for="notes">Catatan / permintaan khusus</label><textarea id="notes" name="notes" rows="3" placeholder="Tuliskan kebutuhan lain, menu catering, atau detail layanan"></textarea></div></div>
+<div class="form-actions"><p class="small-note">* Kolom wajib diisi. Form ini masih berupa demo awal dan belum menyimpan data ke database.</p><button class="btn submit" type="submit">Kirim ringkasan ke WhatsApp ↗</button></div>
+</form></section>
+<section id="la-private" style="padding-top:10px"><div class="form-wrap" style="background:var(--green);color:white;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap"><div><div class="eyebrow">Layanan personal</div><h2 style="font-family:Georgia,serif;margin:6px 0;color:white">LA Private</h2><p style="color:#dbe6df;margin:0">Kebutuhan perjalanan yang lebih personal dan fleksibel.</p></div><a class="btn btn-gold" href="#la-group">Diskusikan kebutuhan</a></div></section>
+</main>
+<footer><strong>ERENA.</strong><p>Land Arrangement • Hotel • Catering • Group & Private</p><span>Prototype website — informasi dan harga dapat disesuaikan.</span></footer>
+<script>
+// GANTI nomor berikut dengan nomor WhatsApp admin Erena, format internasional tanpa tanda +.
+const ERENA_WA_NUMBER = "6281234567890";
+const list=document.getElementById('itineraryList');
+document.getElementById('addItinerary').addEventListener('click',()=>{
+ const n=list.querySelectorAll('.itinerary').length+1;
+ const item=document.createElement('div');item.className='itinerary';
+ item.innerHTML=`<div class="itinerary-head"><b>Tujuan ${n}</b><button class="remove" type="button">Hapus</button></div><div class="fields">
+ <div class="field"><label>Kota</label><select name="city[]"><option>Makkah</option><option>Madinah</option></select></div>
+ <div class="field"><label>Berapa hari</label><input name="days[]" type="number" min="1" placeholder="Contoh: 5"></div>
+ <div class="field full"><label>Nama hotel</label><input name="hotel[]" placeholder="Nama hotel jika sudah ada"></div>
+ <div class="field"><label>Total room hotel</label><input name="rooms[]" type="number" min="0" placeholder="Jumlah kamar"></div>
+ <div class="field"><label>Tanggal menginap</label><input name="stay[]" placeholder="Contoh: 10–15 Januari 2027"></div></div>`;
+ item.querySelector('.remove').addEventListener('click',()=>{item.remove();renumber()});list.appendChild(item);
+});
+function renumber(){list.querySelectorAll('.itinerary-head b').forEach((el,i)=>el.textContent='Tujuan '+(i+1))}
+document.getElementById('groupForm').addEventListener('submit',e=>{
+ e.preventDefault();const f=e.currentTarget;
+ if(Number(f.pax.value)<20){alert('Jumlah pax minimal 20.');f.pax.focus();return}
+ if(f.return.value<f.depart.value){alert('Tanggal kepulangan tidak boleh sebelum tanggal keberangkatan.');f.return.focus();return}
+ const val=id=>document.getElementById(id).value||'-';
+ const transports=[...f.querySelectorAll('input[name="transport"]:checked')].map(x=>x.value);
+ const addons=[...f.querySelectorAll('input[name="addon"]:checked')].map(x=>x.value);
+ const itineraries=[...list.querySelectorAll('.itinerary')].map((el,i)=>{
+ const v=s=>el.querySelector(`[name="${s}"]`).value||'-';
+ return `${i+1}. ${v('city[]')} | ${v('days[]')} hari | Hotel: ${v('hotel[]')} | Room: ${v('rooms[]')} | Tanggal: ${v('stay[]')}`;
+ });
+ const message=`*ERENA — PENGAJUAN LA GROUP*%0A%0A`+
+ `*INFORMASI CUSTOMER*%0ANama: ${val('cust')}%0ANo. Telp: ${val('phone')}%0AEmail: ${val('email')}%0AJumlah Pax: ${val('pax')}%0AKeberangkatan: ${val('depart')}%0AKepulangan: ${val('return')}%0AFlight/Tiket: ${val('flight')}%0AVisa: ${val('visa')}%0ARaudah: ${val('raudah')}%0A%0A`+
+ `*TRANSPORTASI*%0A${transports.join(', ')||'Belum dipilih'}%0A%0A*ITINERARY*%0A${itineraries.join('%0A')}%0A%0A*ADD-ON / SERVICE*%0A${addons.join(', ')||'Belum dipilih'}%0A%0A*CATATAN*%0A${val('notes')}`;
+ if(ERENA_WA_NUMBER==='6281234567890'){alert('Demo: ganti ERENA_WA_NUMBER di bagian JavaScript dengan nomor WhatsApp admin Erena sebelum digunakan. Setelah diganti, form akan membuka WhatsApp dengan ringkasan pesanan.');return}
+ window.open(`https://wa.me/${ERENA_WA_NUMBER}?text=${message}`,'_blank','noopener');
+});
+</script>
+</body></html>
